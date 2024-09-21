@@ -20,22 +20,21 @@ public class Main {
      * @return the sum of num1 + num2 as a string.
      */
     public static String addNumeric(String num1, String num2) {
-        // find longest of the two strings
-        int len1 = num1.length(), len2 = num2.length();
-        int maxLen = Math.max(len1, len2);
-        String result = "";
-        int sum = 0;
-        int digit = 0;
-        int n1 = 0, n2 = 0;
 
+        int len1 = num1.length(), len2 = num2.length();
         int index1 = len1 - 1, index2 = len2 - 1;
-        int carry = 0;
+
+        int sum = 0, digit = 0, carry = 0, n1=0, n2=0;
+
+        StringBuilder sb = new StringBuilder(len1 + len2);
         while (index1 >= 0 || index2 >= 0) {
+
             n1 = 0; n2 = 0;
 
             if (index1 >= 0) {
                 n1 = Integer.parseInt(Character.toString(num1.charAt(index1)));
             }
+
             if (index2 >= 0) {
                 n2 = Integer.parseInt(Character.toString(num2.charAt(index2)));
             }
@@ -43,16 +42,16 @@ public class Main {
             sum = n1 + n2 + carry;
             digit = sum % 10;
             carry = sum / 10;
-            result = digit + result;
 
+            sb.insert(0, digit);
 
             index1--;
             index2--;
         }
 
-        if(carry > 0) result = carry + result;
+        if(carry > 0) sb.insert(0,carry);
 
-        return result;
+        return sb.toString();
     }
 
     /**
