@@ -18,4 +18,11 @@ public class UnitTests {
         String num1 = "111", num2 = "22";
         assertEquals("133", Main.addNumeric(num1, num2));
     }
+
+    @Test
+    @DisplayName("add two numbers with carry")
+    void canAddTwoNumbersWithCarry() {
+        String num1 = "777", num2 = "54";
+        assertEquals("831", Main.addNumeric(num1, num2));
+    }
 }

@@ -4,46 +4,55 @@ public class Main {
         System.out.format("Java version: %s%n", getJavaVersion());
         System.out.format("JUnit version: %s%n", getJUnitVersion());
 
-        System.out.format("%d%n", addNumeric("111","22"));
+        String n1, n2;
+
+        n1 = "111"; n2 = "22";
+        System.out.format("%s + %s = %s%n", n1, n2, addNumeric(n1, n2));
+
+        n1 = "77"; n2 = "44";
+        System.out.format("%s + %s = %s%n", n1, n2, addNumeric(n1, n2));
     }
 
     /**
      * Add two numbers represented as strings and return the sum.
      * @param num1 - String containing only whole numbers or the empty string.
      * @param num2 - String containing only whole numbers or the empty string.
-     * @return the sum of num1 + num2.
+     * @return the sum of num1 + num2 as a string.
      */
     public static String addNumeric(String num1, String num2) {
         // find longest of the two strings
         int len1 = num1.length(), len2 = num2.length();
         int maxLen = Math.max(len1, len2);
         String result = "";
-        long sum = 0;
+        int sum = 0;
         int digit = 0;
-        double n1 = 0, n2 = 0;
-        double powerIndex = 0;
+        int n1 = 0, n2 = 0;
+
         int index1 = len1 - 1, index2 = len2 - 1;
+        int carry = 0;
         while (index1 >= 0 || index2 >= 0) {
             n1 = 0; n2 = 0;
-            double tenPower = Math.pow(10.0, powerIndex);
 
             if (index1 >= 0) {
-                digit = Integer.parseInt(Character.toString(num1.charAt(index1)));
-                n1 = digit * tenPower;
+                n1 = Integer.parseInt(Character.toString(num1.charAt(index1)));
             }
-
             if (index2 >= 0) {
-                digit = Integer.parseInt(Character.toString(num2.charAt(index2)));
-                n2 = digit * tenPower;
+                n2 = Integer.parseInt(Character.toString(num2.charAt(index2)));
             }
-            sum += (long) (n1 + n2);
 
-            powerIndex++;
+            sum = n1 + n2 + carry;
+            digit = sum % 10;
+            carry = sum / 10;
+            result = digit + result;
+
+
             index1--;
             index2--;
         }
 
-        return Long.toString(sum);
+        if(carry > 0) result = carry + result;
+
+        return result;
     }
 
     /**
