@@ -5,6 +5,10 @@ public class Main {
         System.out.format("JUnit version: %s%n", getJUnitVersion());
     }
 
+    public static long addNumeric(String num1, String num2) {
+        return 0;
+    }
+
     /**
      * get the java version that is running the current program
      *
