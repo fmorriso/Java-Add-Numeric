@@ -3,10 +3,47 @@ public class Main {
     public static void main(String[] args) {
         System.out.format("Java version: %s%n", getJavaVersion());
         System.out.format("JUnit version: %s%n", getJUnitVersion());
+
+        System.out.format("%d%n", addNumeric("111","22"));
     }
 
-    public static long addNumeric(String num1, String num2) {
-        return 0;
+    /**
+     * Add two numbers represented as strings and return the sum.
+     * @param num1 - String containing only whole numbers or the empty string.
+     * @param num2 - String containing only whole numbers or the empty string.
+     * @return the sum of num1 + num2.
+     */
+    public static String addNumeric(String num1, String num2) {
+        // find longest of the two strings
+        int len1 = num1.length(), len2 = num2.length();
+        int maxLen = Math.max(len1, len2);
+        String result = "";
+        long sum = 0;
+        int digit = 0;
+        double n1 = 0, n2 = 0;
+        double powerIndex = 0;
+        int index1 = len1 - 1, index2 = len2 - 1;
+        while (index1 >= 0 || index2 >= 0) {
+            n1 = 0; n2 = 0;
+            double tenPower = Math.pow(10.0, powerIndex);
+
+            if (index1 >= 0) {
+                digit = Integer.parseInt(Character.toString(num1.charAt(index1)));
+                n1 = digit * tenPower;
+            }
+
+            if (index2 >= 0) {
+                digit = Integer.parseInt(Character.toString(num2.charAt(index2)));
+                n2 = digit * tenPower;
+            }
+            sum += (long) (n1 + n2);
+
+            powerIndex++;
+            index1--;
+            index2--;
+        }
+
+        return Long.toString(sum);
     }
 
     /**
