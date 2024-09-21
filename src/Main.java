@@ -27,17 +27,13 @@ public class Main {
         int sum = 0, digit = 0, carry = 0, n1=0, n2=0;
 
         StringBuilder sb = new StringBuilder(len1 + len2);
+        // scan right to left
         while (index1 >= 0 || index2 >= 0) {
 
             n1 = 0; n2 = 0;
 
-            if (index1 >= 0) {
-                n1 = Integer.parseInt(Character.toString(num1.charAt(index1)));
-            }
-
-            if (index2 >= 0) {
-                n2 = Integer.parseInt(Character.toString(num2.charAt(index2)));
-            }
+            if (index1 >= 0) n1 = Integer.parseInt("" + num1.charAt(index1));
+            if (index2 >= 0) n2 = Integer.parseInt("" + num2.charAt(index2));
 
             sum = n1 + n2 + carry;
             digit = sum % 10;
