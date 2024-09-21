@@ -24,7 +24,7 @@ public class Main {
         int len1 = num1.length(), len2 = num2.length();
         int index1 = len1 - 1, index2 = len2 - 1;
 
-        int sum = 0, digit = 0, carry = 0, n1=0, n2=0;
+        int sum = 0, digit = 0, carry = 0, n1 = 0, n2 = 0;
 
         StringBuilder sb = new StringBuilder(len1 + len2);
         // scan right to left
@@ -45,7 +45,7 @@ public class Main {
             index2--;
         }
 
-        if(carry > 0) sb.insert(0,carry);
+        if(carry > 0) sb.insert(0, carry);
 
         return sb.toString();
     }
