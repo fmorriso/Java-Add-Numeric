@@ -13,15 +13,16 @@ You may assume that both strings will be non-empty and will consist entirely of 
 
 | Tool     |  Version |
 |:---------|---------:|
-| Java     | 22.0.2.0 |
+| Java     | 23.0.2.0 |
 | JUnit    |    5.9.1 |
-| IntelliJ | 2024.2.1 |
+| IntelliJ | 2024.3.4.1 |
 
 ## Change History
 
 | Date       | Description                                                                        |
 |:-----------|:-----------------------------------------------------------------------------------|
 | 2024-09-21 | Initial creation                                                                   |
+| 2025-03-18 | switch from GitLab to GitHub |
 
 ## Getting started
 
