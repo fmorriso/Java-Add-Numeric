@@ -25,11 +25,12 @@ conversion methods to convert strings into integers, nor a large-integer library
 
 ## Change History
 
-| Date       | Description                  |
-|:-----------|:-----------------------------|
-| 2024-09-21 | Initial creation             |
-| 2025-03-18 | switch from GitLab to GitHub |
-| 2025-03-21 | upgrade to JUnit 5.12.1      |
+| Date       | Description                                                  |
+|:-----------|:-------------------------------------------------------------|
+| 2024-09-21 | Initial creation                                             |
+| 2025-03-18 | switch from GitLab to GitHub                                 |
+| 2025-03-21 | upgrade to JUnit 5.12.1                                      |
+| 2025-03-23 | Switch to using global JUnit 5.12.1 instead of local edition |
 
 ## Getting started
 
