@@ -17,11 +17,12 @@ conversion methods to convert strings into integers, nor a large-integer library
 
 ## Tools Used
 
-| Tool     |    Version |
-|:---------|-----------:|
-| Java     |   23.0.2.0 |
-| JUnit    |     5.12.1 |
-| IntelliJ | 2024.3.4.1 |
+| Tool     |  Version |
+|:---------|---------:|
+| Java     | 24.0.1.0 |
+| JUnit    |   5.13.1 |
+| IntelliJ | 2025.1.2 |
+| VSCode   |  1.101.0 |
 
 ## Change History
 
@@ -31,4 +32,5 @@ conversion methods to convert strings into integers, nor a large-integer library
 | 2025-03-18 | switch from GitLab to GitHub                                 |
 | 2025-03-21 | upgrade to JUnit 5.12.1                                      |
 | 2025-03-23 | Switch to using global JUnit 5.12.1 instead of local edition |
+| 2025-06-13 | upgrade to JUnit 5.13.1                                      |
 
